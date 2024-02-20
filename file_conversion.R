@@ -2,16 +2,14 @@
 library(readr)
 library(openxlsx)
 
-setwd("/Users/tariqr/Desktop/allele_matching/all_comparison/")
-getwd()
 
 txt_data <- read_delim("/Users/tariqr/Desktop/allele_matching/all_comparison/combined2.txt", delim = "\t")
 head(txt_data)
 
-
 write.xlsx(txt_data, "combined2.xlsx")
 
 
+# for multiple files in a directory
 file_list <- list.files(pattern = "output_.*_compared\\.txt")
 
 # Iterate through each file and convert to .xlsx
